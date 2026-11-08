@@ -1,0 +1,39 @@
+project:
+  name: FlowDesk
+  seed: 20261106
+
+data:
+  start_date: "2024-11-01"
+  end_date: "2026-10-31"
+  n_accounts: 10000
+
+accounts:
+  segments:
+    smb: 0.65
+    mid_market: 0.28
+    enterprise: 0.07
+
+  acquisition_channels:
+    organic: 0.30
+    paid_search: 0.25
+    referral: 0.20
+    partner: 0.15
+    outbound: 0.10
+
+  monthly_signup_growth: 0.02
+
+  employee_bands:
+    smb:
+      median: 12
+      min: 2
+      max: 49
+
+    mid_market:
+      median: 120
+      min: 50
+      max: 499
+
+    enterprise:
+      median: 900
+      min: 500
+      max: 5000
