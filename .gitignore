@@ -1,0 +1,22 @@
+# Credentials
+.env
+.env.*
+
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Generated data
+data/raw/
+data/generated/
+*.parquet
+*.csv.gz
+
+# Editor and OS
+.vscode/
+.DS_Store

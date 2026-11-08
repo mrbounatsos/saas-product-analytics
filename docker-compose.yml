@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: flowdesk_postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: flowdesk
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: flowdesk_analytics
+
+    ports:
+      - "127.0.0.1:5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flowdesk -d flowdesk_analytics"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:
